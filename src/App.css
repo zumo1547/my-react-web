@@ -1,44 +1,86 @@
-.app-container {
-  font-family: 'Segoe UI', sans-serif;
+:root {
+  --bg-light: #f9f9f9;
+  --text-light: #1f2937;
+  --bg-dark: #1f2937;
+  --text-dark: #f9f9f9;
+  --accent: #9b4dca;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.header {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--accent);
+  color: white;
+}
+
+.theme-toggle {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
   padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #333;
-  background: linear-gradient(to right, #f0f0f0, #e0d4f7);
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-header {
-  text-align: center;
+.block {
   margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 5px solid var(--accent);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #6b21a8;
+code {
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
 }
 
-.about, .skills {
-  margin-bottom: 1.5rem;
-}
-
-.skills ul {
-  list-style: square;
-  margin-left: 1.5rem;
-}
-
-footer {
+.footer {
   text-align: center;
-  margin-top: 2rem;
+  padding: 1rem;
   font-size: 0.9rem;
 }
 
-a {
-  color: #7c3aed;
-  text-decoration: none;
-}
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 1rem;
+  }
 
-a:hover {
-  text-decoration: underline;
+  .block {
+    padding: 0.5rem;
+  }
+
+  .theme-toggle {
+    width: 100%;
+  }
 }
